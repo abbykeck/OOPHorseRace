@@ -23,7 +23,7 @@ classDiagram
     Race o-- Horse
 ```
 ## Algorithm for main
-1. seed random generator
+1. seed random generator using c style
 1. initialize race
 1. start race
 1. end main
@@ -84,7 +84,7 @@ classDiagram
 1. end init
 1. void advance()
     1. int coin = -1;
-    1. randomly assign coin either 0 or 1
+    1. randomly assign coin either 0 or 1 c style
     1. position += coin;
 1. end advance
 1. void printLane()

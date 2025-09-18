@@ -9,3 +9,6 @@ race.o: race.cpp race.h
 
 main.o: main.cpp horse.h race.h
 	g++ -c main.cpp
+
+run: oppHorseRace
+	./oppHorseRace
