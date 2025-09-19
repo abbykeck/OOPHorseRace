@@ -8,18 +8,18 @@ Horse::Horse() {
 	Horse::TRACK_LENGTH = -1;
 } // end constructor
 
-Horse::init(int index, int trackLength) {
+void Horse::init(int index, int trackLength) {
 	Horse::index = index;
 	Horse::TRACK_LENGTH = trackLength;
 } // end init
 
-Horse::advance() {
+void Horse::advance() {
 	int coin = -1;
-	coin = rand() % 1;
+	coin = rand() % 2;
 	Horse::position += coin;
 } // end advance
 
-Horse::printLane() {
+void Horse::printLane() {
 	for (int i = 0; i < Horse::TRACK_LENGTH; i++) {
 		if (i == Horse::position) {
 			std::cout << Horse::index;
@@ -30,9 +30,9 @@ Horse::printLane() {
 	std::cout << std::endl;
 } // end printLane
 
-Horse::isWinner() {
+bool Horse::isWinner() {
 	if (Horse::position >= Horse::TRACK_LENGTH) {
-		std::cout << "Horse " + Horse::index + " WINS!!!" + std::endl;
+		std::cout << "Horse " << Horse::index << " WINS!!!" << std::endl;
 		return true;
 	} else {
 		return false;

@@ -1,14 +1,22 @@
+CFLAGS= -g -Wall
 oopHorseRace: horse.o race.o main.o
-	g++ horse.o race.o main.o -o oopHorseRace
+	g++ $(CFLAGS) horse.o race.o main.o -o oopHorseRace
 
 horse.o: horse.cpp horse.h
-	g++ -c horse.cpp
+	g++ $(CFLAGS) -c horse.cpp
 
 race.o: race.cpp race.h
-	g++ -c race.cpp
+	g++ $(CFLAGS) -c race.cpp
 
 main.o: main.cpp horse.h race.h
-	g++ -c main.cpp
+	g++ $(CFLAGS) -c main.cpp
 
-run: oppHorseRace
-	./oppHorseRace
+run: oopHorseRace
+	./oopHorseRace
+
+clean:
+	rm *.o
+	rm oopHorseRace
+
+debug: oopHorseRace
+	gdb oopHorseRace
