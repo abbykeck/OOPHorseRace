@@ -90,7 +90,7 @@ classDiagram
 1. void printLane()
     1. for (int i = 0; i < TRACKLENGTH; i++)
         1. if (i == position)
-            1. print horseNum;
+            1. print index;
         1. else
             1. print ".";
         1. end if
@@ -98,8 +98,8 @@ classDiagram
     1. print new line
 1. end printLane
 1. bool isWinner()
-    1. if (horses[horseNum] >= TRACKLENGTH)
-        1. print "Horse " + horseNum + " WINS!!!";
+    1. if (position >= TRACKLENGTH)
+        1. print "Horse " + index + " WINS!!!";
         1. return true;
     1. else
         1. return false;
